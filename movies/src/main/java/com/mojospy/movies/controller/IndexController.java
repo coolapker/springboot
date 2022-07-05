@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.text.DateFormat;
 import java.util.Date;
 
+/**
+ * @author mojospy
+ */
 @Controller
 public class IndexController {
     @RequestMapping({"/","/index","/index.html"})

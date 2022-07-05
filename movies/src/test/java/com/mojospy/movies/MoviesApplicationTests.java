@@ -5,15 +5,9 @@ import com.mojospy.movies.dao.MovieDao;
 import com.mojospy.movies.entity.Movie;
 import com.mojospy.movies.service.MovieService;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.yaml.snakeyaml.events.Event;
 
-import java.util.List;
-
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class MoviesApplicationTests {
 
