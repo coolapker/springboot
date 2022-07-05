@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<img src="img/man.jpg" alt="">
+<form>
+id：<input type="text" id="id">
+<br>
+<input type="button" value="提交" id="submit">
+<br>
+</form>
+留言：<div id="div"></div>
+现在时间是  <p th:text="${now}"></p>
+<form action="upload" method="post" enctype="multipart/form-data">
+    选择图片:<input type="file" name="file" accept="image/*" /> <br>
+    <input type="submit" value="上传">
+</form>
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script></body>
+<script>
+    $("#submit").click(function () {
+        $.get("/movies/"+$("#id").val(),function (data,status) {
+            var name = data.name;
+            alert(123)
+            // name = data.name;
+            $("#div").val(123)
+
+        })
+    })
+
+</script>
+</html>

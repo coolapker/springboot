@@ -1,0 +1,39 @@
+server:
+  port: 8080
+---
+
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: password.LBM
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.142.4.147:3306/movies?serverTimezone=UTC&&useUnicode=true&characterEncoding=UTF-8
+    type: com.alibaba.druid.pool.DruidDataSource
+  main:
+    banner-mode: off
+
+
+
+---
+
+---
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+  type-aliases-package: com.mojospy.movies.entity.Movie
+---
+logging:
+  level:
+    org.apache.ibatis.logging: debug
+    root: error
+---
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
