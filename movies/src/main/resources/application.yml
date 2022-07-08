@@ -6,16 +6,15 @@ spring:
   thymeleaf:
     cache: false
   datasource:
-    username: root
-    password: password.LBM
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://8.142.4.147:3306/movies?serverTimezone=UTC&&useUnicode=true&characterEncoding=UTF-8
-    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      username: root
+      password: password.LBM
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://8.142.4.147:3306/movies?serverTimezone=UTC&&useUnicode=true&characterEncoding=UTF-8
+#  transaction:
+#    rollback-on-commit-failure: true
   main:
     banner-mode: off
-
-
-
 ---
 
 ---
@@ -24,12 +23,17 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     banner: false
+    db-config:
+      id-type: auto
   type-aliases-package: com.mojospy.movies.entity.Movie
+
+
 ---
 logging:
   level:
     org.apache.ibatis.logging: debug
-    root: error
+    root: info
+    web: info
 ---
 pagehelper:
   helperDialect: mysql

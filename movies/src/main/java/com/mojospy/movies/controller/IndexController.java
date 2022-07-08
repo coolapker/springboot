@@ -1,5 +1,6 @@
 package com.mojospy.movies.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import java.util.Date;
 /**
  * @author mojospy
  */
+@Api("index接口")
 @Controller
 public class IndexController {
     @RequestMapping({"/","/index","/index.html"})

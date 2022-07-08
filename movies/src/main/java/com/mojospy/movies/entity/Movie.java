@@ -1,14 +1,17 @@
 package com.mojospy.movies.entity;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Component
+/**
+ * @author mojospy
+ */
 @Data
-//@TableName("Movie")
 @NoArgsConstructor
 @AllArgsConstructor
+@ApiModel
 public class Movie {
     private Integer id;
     private String name;
