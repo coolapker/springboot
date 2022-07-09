@@ -1,10 +1,13 @@
 package com.mojospy.movies.controller;
 
+import com.mojospy.movies.dto.Result;
 import com.mojospy.movies.entity.Movie;
 import com.mojospy.movies.service.MovieService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author mojospy
@@ -22,9 +25,18 @@ public class MovieNameController {
     *
     */
     @GetMapping("/{id}")
-    Movie getById(@PathVariable Long id) {
-        log.info("日志id是"+id);
-        return movieService.getById(id);
+    Result getById(@PathVariable Long id) {
+        log.info("获取id{}",id);
+
+        Movie movie = movieService.getById(id);
+        return new Result(movie,true, "成功");
+    }
+
+    @GetMapping
+    Result getAll() {
+        log.info("获取全部");
+        List<Movie> list = movieService.list();
+        return new Result(list,true,"成功");
     }
 
     @PostMapping

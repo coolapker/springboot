@@ -10,13 +10,10 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
-public class Result<T> {
-    private T data;
+public class Result {
+    private Object data;
     private Boolean success;
-    private String error;
+    private String msg;
 
-    public Result(T data,Boolean success) {
-        this.success=success;
-        this.data= data;
-    }
+
 }
