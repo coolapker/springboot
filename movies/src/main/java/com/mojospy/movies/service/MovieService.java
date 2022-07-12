@@ -5,4 +5,5 @@ import com.mojospy.movies.entity.Movie;
 
 
 public interface MovieService extends IService<Movie> {
+    Movie findOne(Integer id);
 }

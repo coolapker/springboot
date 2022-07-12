@@ -17,7 +17,7 @@ public class RedisTest {
     @Test
     void testString() {
         ValueOperations ops = redisTemplate.opsForValue();
-//        ops.set("p", "lisi");
+        ops.set("name", "lisi");
         Object name = ops.get("name");
         log.info("结果是{}",name);
     }

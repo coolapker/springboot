@@ -69,6 +69,12 @@ public class MoviesApplicationTests {
         System.out.println();
     }
 
+    @Test
+    void select() {
+        movieService.findOne(6);
+    }
+
+
 }
 
 
