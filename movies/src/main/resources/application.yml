@@ -1,51 +1,7 @@
 spring:
   profiles:
     active: dev
----
-
-spring:
-  thymeleaf:
-    cache: false
-  datasource:
-    druid:
-      username: root
-      password: password.LBM
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://8.142.4.147:3306/movies?serverTimezone=UTC&&useUnicode=true&characterEncoding=UTF-8
-#  transaction:
-#    rollback-on-commit-failure: true
-  main:
-    banner-mode: off
----
-spring:
-  profiles:
----
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    banner: false
-    db-config:
-      id-type: auto
-  type-aliases-package: com.mojospy.movies.entity.Movie
-
-
----
-logging:
-  level:
-    org.apache.ibatis.logging: debug
-    root: info
-    web: info
----
-pagehelper:
-  helperDialect: mysql
-  reasonable: true
-  supportMethodsArguments: true
-  params: count=countSql
-
-spring:
-  mvc:
-    throw-exception-if-no-handler-found: true
-
-  resources:
-    add-mappings: false
+    group:
+      "dev": devDB,devRedis,devMVC
+      "pro": proDB,proRedis,proMVC
+      "test": testDB,testRedis,testMVC
